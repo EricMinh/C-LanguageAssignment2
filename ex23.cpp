@@ -1,3 +1,10 @@
+//Author: Eric Minh Hanh Nguyen
+//This program folds input lines after the last nonblank character before the nth column of input...
+//...with segments of blank characters not being folded.
+//This program requires the fileOpCl.h to be present and was tested valid on Visual Studio 2017
+//Command Prompt Format: program.exe inputfile.txt outputfile.txt (optional int value)
+//DISCLAIMER: Should any problem in testing ensue, author can provide testing on personal computer
+
 #include "fileOpCl.h"
 
 int main(int argc, const char * argv[]) {
@@ -6,9 +13,6 @@ int main(int argc, const char * argv[]) {
 	FILE * fout;
 	int n;
 	int c;
-
-	int charCounter, spacePos, spacePrint;
-	charCounter = spacePos = spacePrint = 0;
 
 	bool ok = openfiles(argc, argv, &fin, &fout, &n);
 
@@ -33,6 +37,7 @@ int main(int argc, const char * argv[]) {
 					if (c == '\\') {
 
 						c = fgetc(fin);
+						fputc(c, fout);
 
 					}
 					c = fgetc(fin);
@@ -53,6 +58,7 @@ int main(int argc, const char * argv[]) {
 					if (c == '\\') {
 
 						c = fgetc(fin);
+						fputc(c, fout);
 
 					}
 					c = fgetc(fin);
