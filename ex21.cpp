@@ -1,3 +1,8 @@
+//Author: Eric Minh Hanh Nguyen
+//This program removes spaces and replaces them exactly with minimal tabs and spaces needed
+//This program requires the fileOpCl.h to be present and was tested valid on Visual Studio 2017
+//DISCLAIMER: Should any problem in testing ensue, author can provide testing on personal computer
+
 #include "fileOpCl.h"
 
 #define TABSPACE 8
@@ -10,7 +15,7 @@ int main(int argc, const char * argv[]) {
 	int c;
 
 	int charCounter, modResult, blankCounter, tabCounter;
-	charCounter = modResult = blankCounter = tabCounter =0;
+	charCounter = modResult = blankCounter = tabCounter = 0;
 
 	char carryOver;
 
