@@ -30,6 +30,11 @@ int main(int argc, const char * argv[]) {
 				fputc(c, fout);
 				while (c != '\"')
 				{
+					if (c == '\\') {
+
+						c = fgetc(fin);
+
+					}
 					c = fgetc(fin);
 					fputc(c, fout);
 				}
@@ -45,6 +50,11 @@ int main(int argc, const char * argv[]) {
 				fputc(c, fout);
 				while (c != '\'')
 				{
+					if (c == '\\') {
+
+						c = fgetc(fin);
+
+					}
 					c = fgetc(fin);
 					fputc(c, fout);
 				}
