@@ -1,6 +1,7 @@
 //Author: Eric Minh Hanh Nguyen
 //This program removes spaces and replaces them exactly with minimal tabs and spaces needed
 //This program requires the fileOpCl.h to be present and was tested valid on Visual Studio 2017
+//Command Prompt Format: program.exe inputfile.txt outputfile.txt (optional int value)
 //DISCLAIMER: Should any problem in testing ensue, author can provide testing on personal computer
 
 #include "fileOpCl.h"
