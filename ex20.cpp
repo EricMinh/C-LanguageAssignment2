@@ -1,3 +1,8 @@
+//Author: Eric Minh Hanh Nguyen
+//This program removes tabs and replaces them with spaces that take up the exact space used by said tabs
+//This program requires the fileOpCl.h to be present and was tested valid on Visual Studio 2017
+//DISCLAIMER: Should any problem in testing ensue, author can provide testing on personal computer
+
 #include "fileOpCl.h"
 
 #define TABSPACE 8
