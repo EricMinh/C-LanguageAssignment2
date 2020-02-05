@@ -1,6 +1,5 @@
 //Author: Eric Minh Hanh Nguyen
-//This program folds input lines after the last nonblank character before the nth column of input...
-//...with segments of blank characters not being folded.
+//This program removes all comments from a C program
 //This program requires the fileOpCl.h to be present and was tested valid on Visual Studio 2017
 //Command Prompt Format: program.exe inputfile.txt outputfile.txt (optional int value)
 //DISCLAIMER: Should any problem in testing ensue, author can provide testing on personal computer
