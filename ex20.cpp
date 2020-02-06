@@ -19,6 +19,12 @@ int main(int argc, const char * argv[]) {
 	charCounter = modResult = 0;
 
 	bool ok = openfiles(argc, argv, &fin, &fout, &n);
+	
+	if (ok == false) {
+		
+		return 0;
+		
+	}
 
 	while ((c = fgetc(fin)) != EOF) {
 
