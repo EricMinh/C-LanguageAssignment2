@@ -21,6 +21,12 @@ int main(int argc, const char * argv[]) {
 	char carryOver;
 
 	bool ok = openfiles(argc, argv, &fin, &fout, &n);
+	
+	if (ok == false) {
+		
+		return 0;
+		
+	}
 
 	while ((c = fgetc(fin)) != EOF) {
 
