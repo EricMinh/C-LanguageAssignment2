@@ -14,8 +14,6 @@ int main(int argc, const char * argv[]) {
 	int n, c, charCounter, modResult, blankCounter, tabCounter;
 	charCounter = modResult = blankCounter = tabCounter = 0;
 
-	char carryOver;
-
 	bool ok = openfiles(argc, argv, &fin, &fout, &n);
 	
 	if (ok == false) { return 0; }
@@ -38,7 +36,6 @@ int main(int argc, const char * argv[]) {
 				if (c == '\n') { charCounter = 0; }
 
 			}
-			carryOver = c;
 
 			tabCounter = modResult / TABSPACE;
 			modResult = modResult % TABSPACE;
@@ -51,7 +48,7 @@ int main(int argc, const char * argv[]) {
 			}
 			else { while (blankCounter-- > 0) { fputc(' ', fout); } }
 
-			if (c != EOF) { fputc(carryOver, fout); }
+			if (c != EOF) { fputc(c, fout); }
 		}
 		else {
 
