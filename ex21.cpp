@@ -51,18 +51,9 @@ int main(int argc, const char * argv[]) {
 				blankCounter = 0;
 
 			}
-			else {
+			else { while (blankCounter-- > 0) { fputc(' ', fout); } }
 
-				while (blankCounter-- > 0) { fputc(' ', fout); }
-
-			}
-
-			if (c != EOF) {
-
-				fputc(carryOver, fout);
-
-			}
-
+			if (c != EOF) { fputc(carryOver, fout); }
 		}
 		else {
 
