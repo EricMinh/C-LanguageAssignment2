@@ -10,29 +10,24 @@
 
 int main(int argc, const char * argv[]) {
 
-	FILE * fin;
-	FILE * fout;
-	int n;
-	int c;
-
-	int charCounter, modResult, blankCounter, tabCounter;
+	FILE * fin, * fout;
+	int n, c, charCounter, modResult, blankCounter, tabCounter;
 	charCounter = modResult = blankCounter = tabCounter = 0;
 
 	char carryOver;
 
 	bool ok = openfiles(argc, argv, &fin, &fout, &n);
 	
-	if (ok == false) {
-		
-		return 0;
-		
-	}
+	if (ok == false) { return 0; }
 
 	while ((c = fgetc(fin)) != EOF) {
 
 		if (c == ' ') {
 
+			blankCounter = 0;
 			modResult = charCounter % TABSPACE;
+			charCounter++;
+
 			while (c == ' ') {
 
 				modResult++;
@@ -40,13 +35,10 @@ int main(int argc, const char * argv[]) {
 				c = fgetc(fin);
 				charCounter++;
 
-				if (c == '\n') {
-
-					charCounter = -1;
-
-				}
+				if (c == '\n') { charCounter = 0; }
 
 			}
+			if (c == '\n') { charCounter = 0; }
 			carryOver = c;
 
 			tabCounter = modResult / TABSPACE;
@@ -54,50 +46,30 @@ int main(int argc, const char * argv[]) {
 
 			if (tabCounter > 0) {
 
-				while (tabCounter > 0) {
-
-					fputc('\t', fout);
-					tabCounter--;
-
-				}
-
-				while (modResult > 0) {
-
-					fputc(' ', fout);
-					modResult--;
-
-				}
-
+				while (tabCounter-- > 0) { fputc('\t', fout); }
+				while (modResult-- > 0) { fputc(' ', fout); }
 				blankCounter = 0;
 
 			}
 			else {
 
-				while (blankCounter > 0) {
-
-					fputc(' ', fout);
-					blankCounter--;
-
-				}
+				while (blankCounter-- > 0) { fputc(' ', fout); }
 
 			}
 
 			if (c != EOF) {
+
 				fputc(carryOver, fout);
-				charCounter++;
+
 			}
 
 		}
 		else {
 
-			if (c == '\n') {
-
-				charCounter = -1;
-
-			}
-
 			fputc(c, fout);
 			charCounter++;
+
+			if (c == '\n') { charCounter = 0; }
 
 		}
 
