@@ -47,7 +47,6 @@ int main(int argc, const char * argv[]) {
 
 				while (tabCounter-- > 0) { fputc('\t', fout); }
 				while (modResult-- > 0) { fputc(' ', fout); }
-				blankCounter = 0;
 
 			}
 			else { while (blankCounter-- > 0) { fputc(' ', fout); } }
