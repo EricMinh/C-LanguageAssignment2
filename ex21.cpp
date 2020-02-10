@@ -38,7 +38,6 @@ int main(int argc, const char * argv[]) {
 				if (c == '\n') { charCounter = 0; }
 
 			}
-			if (c == '\n') { charCounter = 0; }
 			carryOver = c;
 
 			tabCounter = modResult / TABSPACE;
